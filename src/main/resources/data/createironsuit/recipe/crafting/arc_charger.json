@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " S ",
+    "GPG",
+    "III"
+  ],
+  "key": {
+    "S": {
+      "item": "create:shaft"
+    },
+    "G": {
+      "item": "create:golden_sheet"
+    },
+    "P": {
+      "item": "create:precision_mechanism"
+    },
+    "I": {
+      "item": "create:iron_sheet"
+    }
+  },
+  "result": {
+    "id": "createironsuit:arc_charger",
+    "count": 1
+  }
+}

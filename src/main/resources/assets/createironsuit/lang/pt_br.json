@@ -1,0 +1,15 @@
+{
+  "itemGroup.createironsuit": "Create: Iron Suit",
+  "item.createironsuit.iron_suit_helmet": "Capacete da Armadura de Ferro",
+  "item.createironsuit.iron_suit_chestplate": "Peitoral da Armadura de Ferro (Reator)",
+  "item.createironsuit.iron_suit_leggings": "Calças da Armadura de Ferro",
+  "item.createironsuit.iron_suit_boots": "Botas da Armadura de Ferro",
+  "item.createironsuit.repulsor_glove": "Luva Repulsora",
+  "item.createironsuit.incomplete_suit_part": "Peça de Armadura Incompleta",
+  "block.createironsuit.arc_charger": "Carregador do Reator",
+  "tooltip.createironsuit.energy": "Reator: %s / %s FE",
+  "tooltip.createironsuit.charge_hint": "Coloque no Carregador do Reator e gire com força cinética.",
+  "tooltip.createironsuit.full_set": "Conjunto completo: voo, visão noturna, força, resistência e queda segura.",
+  "message.createironsuit.no_reactor": "Você precisa vestir o peitoral com o reator.",
+  "message.createironsuit.low_energy": "Energia do reator insuficiente."
+}

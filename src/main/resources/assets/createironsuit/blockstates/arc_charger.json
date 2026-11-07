@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "axis=y": { "model": "createironsuit:block/arc_charger" },
+    "axis=z": { "model": "createironsuit:block/arc_charger", "x": 90 },
+    "axis=x": { "model": "createironsuit:block/arc_charger", "x": 90, "y": 90 }
+  }
+}

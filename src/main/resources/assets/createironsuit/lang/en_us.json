@@ -1,0 +1,15 @@
+{
+  "itemGroup.createironsuit": "Create: Iron Suit",
+  "item.createironsuit.iron_suit_helmet": "Iron Suit Helmet",
+  "item.createironsuit.iron_suit_chestplate": "Iron Suit Chestplate (Reactor)",
+  "item.createironsuit.iron_suit_leggings": "Iron Suit Leggings",
+  "item.createironsuit.iron_suit_boots": "Iron Suit Boots",
+  "item.createironsuit.repulsor_glove": "Repulsor Glove",
+  "item.createironsuit.incomplete_suit_part": "Incomplete Suit Part",
+  "block.createironsuit.arc_charger": "Reactor Charger",
+  "tooltip.createironsuit.energy": "Reactor: %s / %s FE",
+  "tooltip.createironsuit.charge_hint": "Place it in the Reactor Charger and spin it with kinetic power.",
+  "tooltip.createironsuit.full_set": "Full set: flight, night vision, strength, resistance and safe landing.",
+  "message.createironsuit.no_reactor": "You need to wear the reactor chestplate.",
+  "message.createironsuit.low_energy": "Not enough reactor energy."
+}

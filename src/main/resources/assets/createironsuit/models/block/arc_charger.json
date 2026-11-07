@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "createironsuit:block/arc_charger_end",
+    "side": "createironsuit:block/arc_charger_side"
+  }
+}
