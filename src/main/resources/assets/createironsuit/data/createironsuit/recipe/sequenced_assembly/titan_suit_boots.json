@@ -1,0 +1,78 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:netherite_boots"
+  },
+  "loops": 3,
+  "results": [
+    {
+      "id": "createironsuit:titan_suit_boots"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createironsuit:incomplete_suit_part"
+        },
+        {
+          "item": "create:sturdy_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "createironsuit:incomplete_suit_part"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createironsuit:incomplete_suit_part"
+        },
+        {
+          "item": "create:propeller"
+        }
+      ],
+      "results": [
+        {
+          "id": "createironsuit:incomplete_suit_part"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createironsuit:incomplete_suit_part"
+        },
+        {
+          "item": "create:precision_mechanism"
+        }
+      ],
+      "results": [
+        {
+          "id": "createironsuit:incomplete_suit_part"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "createironsuit:incomplete_suit_part"
+        }
+      ],
+      "results": [
+        {
+          "id": "createironsuit:incomplete_suit_part"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "createironsuit:incomplete_suit_part"
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "type": "create:sequenced_assembly",
+  "ingredient": {
+    "item": "minecraft:diamond_boots"
+  },
+  "loops": 2,
+  "results": [
+    {
+      "id": "createironsuit:silver_suit_boots"
+    }
+  ],
+  "sequence": [
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createironsuit:incomplete_suit_part"
+        },
+        {
+          "item": "create:iron_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "createironsuit:incomplete_suit_part"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createironsuit:incomplete_suit_part"
+        },
+        {
+          "item": "create:propeller"
+        }
+      ],
+      "results": [
+        {
+          "id": "createironsuit:incomplete_suit_part"
+        }
+      ]
+    },
+    {
+      "type": "create:deploying",
+      "ingredients": [
+        {
+          "item": "createironsuit:incomplete_suit_part"
+        },
+        {
+          "item": "create:brass_sheet"
+        }
+      ],
+      "results": [
+        {
+          "id": "createironsuit:incomplete_suit_part"
+        }
+      ]
+    },
+    {
+      "type": "create:pressing",
+      "ingredients": [
+        {
+          "item": "createironsuit:incomplete_suit_part"
+        }
+      ],
+      "results": [
+        {
+          "id": "createironsuit:incomplete_suit_part"
+        }
+      ]
+    }
+  ],
+  "transitional_item": {
+    "id": "createironsuit:incomplete_suit_part"
+  }
+}
