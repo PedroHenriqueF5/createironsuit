@@ -3,14 +3,24 @@
 Armadura de ferro motorizada com reator, voo e repulsores, integrada ao Create.
 
 ## O que tem
-- **Armadura (4 pecas)**: montada com *Sequenced Assembly* do Create a partir da armadura de ferro vanilla
-  (capacete: folha de ouro + tubo eletronico; peitoral: folha de ouro + mecanismo de precisao; calcas: folha de ouro + folha de ferro; botas: folha de ouro + helice).
-- **Reator (peitoral)**: guarda ate 1.000.000 FE. A barra do item mostra a carga.
-- **Carregador do Reator** (bloco cinetico do Create): clique com o peitoral para inserir, mao vazia para retirar. Gire com forca cinetica para carregar (2 FE/tick por RPM, consome stress).
-- **Conjunto completo + carga**: voo (gasta FE), visao noturna, forca II, resistencia II, pulo, velocidade, resistencia ao fogo, respirar na agua e queda sem dano.
-- **Luva Repulsora**: segure e clique com o botao direito; raio de ate 48 blocos, 5.000 FE por disparo.
+- **5 armaduras** (cada uma com modelo 3D proprio, status e habilidades): Classica (vermelho/dourado), Furtiva (preta, rapida, pula alto),
+  Cobalto (azul/prata, voo mais rapido), Prata (resistente) e **Titan** (pesada, modelo grande, muita defesa e forca, voo lento).
+- Cada armadura e montada com *Sequenced Assembly* do Create a partir de uma armadura vanilla (ferro, diamante ou netherite).
+- **Reator (peitoral)**: guarda ate 1.000.000 FE. **Carregador do Reator** (bloco cinetico do Create) recarrega com rotacao.
+- **Conjunto completo + carga**: voo, visao noturna, forca, resistencia, pulo, velocidade, respirar na agua, fogo e queda sem dano.
+- **Luva Repulsora**: botao direito com ela na mao.
 
-Todos os numeros ficam em `SuitConstants.java`.
+## Teclas (mude em Controles > Create: Iron Suit)
+| Tecla | Poder | Custo (FE) |
+|---|---|---|
+| R | Repulsor (raio das maos) | 5.000 |
+| G | Unibeam (raio do peito, dano alto) | 40.000 |
+| Z | Pulso de energia (empurra e fere ao redor) | 15.000 |
+| V | Impulso / dash na direcao do olhar | 8.000 |
+| B | Ligar/desligar voo | - |
+| H | Ligar/desligar sistemas (efeitos passivos) | - |
+
+Todos os numeros ficam em `SuitConstants.java` e `SuitVariant.java`.
 
 ## Como compilar
 1. JDK 21.
