@@ -2,9 +2,11 @@ package dev.createironsuit.registry;
 
 import dev.createironsuit.CreateIronSuit;
 import dev.createironsuit.SuitConstants;
+import dev.createironsuit.SuitVariant;
 import dev.createironsuit.energy.SuitHelper;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.neoforged.neoforge.registries.DeferredHolder;
@@ -19,15 +21,17 @@ public final class ModCreativeTabs {
     public static final DeferredHolder<CreativeModeTab, CreativeModeTab> MAIN = TABS.register("main",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup." + CreateIronSuit.MODID))
-                    .icon(() -> new ItemStack(ModItems.HELMET.get()))
+                    .icon(() -> new ItemStack(ModItems.piece(SuitVariant.CLASSIC, ArmorItem.Type.HELMET).get()))
                     .displayItems((params, out) -> {
-                        out.accept(ModItems.HELMET.get());
-                        ItemStack charged = new ItemStack(ModItems.CHESTPLATE.get());
-                        SuitHelper.setEnergy(charged, SuitConstants.MAX_ENERGY);
-                        out.accept(charged);
-                        out.accept(ModItems.CHESTPLATE.get());
-                        out.accept(ModItems.LEGGINGS.get());
-                        out.accept(ModItems.BOOTS.get());
+                        for (SuitVariant v : SuitVariant.values()) {
+                            out.accept(ModItems.piece(v, ArmorItem.Type.HELMET).get());
+                            ItemStack charged = new ItemStack(ModItems.piece(v, ArmorItem.Type.CHESTPLATE).get());
+                            SuitHelper.setEnergy(charged, SuitConstants.MAX_ENERGY);
+                            out.accept(charged);
+                            out.accept(ModItems.piece(v, ArmorItem.Type.CHESTPLATE).get());
+                            out.accept(ModItems.piece(v, ArmorItem.Type.LEGGINGS).get());
+                            out.accept(ModItems.piece(v, ArmorItem.Type.BOOTS).get());
+                        }
                         out.accept(ModItems.REPULSOR_GLOVE.get());
                         out.accept(ModItems.CHARGER.get());
                     })

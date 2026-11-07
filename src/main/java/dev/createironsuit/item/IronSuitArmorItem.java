@@ -1,6 +1,7 @@
 package dev.createironsuit.item;
 
 import dev.createironsuit.SuitConstants;
+import dev.createironsuit.SuitVariant;
 import dev.createironsuit.energy.SuitHelper;
 import java.util.List;
 import net.minecraft.ChatFormatting;
@@ -13,8 +14,15 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 
 public class IronSuitArmorItem extends ArmorItem {
-    public IronSuitArmorItem(Holder<ArmorMaterial> material, Type type, Item.Properties properties) {
+    private final SuitVariant variant;
+
+    public IronSuitArmorItem(Holder<ArmorMaterial> material, Type type, SuitVariant variant, Item.Properties properties) {
         super(material, type, properties);
+        this.variant = variant;
+    }
+
+    public SuitVariant getVariant() {
+        return variant;
     }
 
     private boolean isReactor() {
@@ -48,5 +56,6 @@ public class IronSuitArmorItem extends ArmorItem {
             tooltip.add(Component.translatable("tooltip.createironsuit.charge_hint").withStyle(ChatFormatting.GRAY));
         }
         tooltip.add(Component.translatable("tooltip.createironsuit.full_set").withStyle(ChatFormatting.DARK_GRAY));
+        tooltip.add(Component.translatable("tooltip.createironsuit.keys").withStyle(ChatFormatting.DARK_GRAY));
     }
 }

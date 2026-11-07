@@ -2,8 +2,13 @@ package dev.createironsuit.registry;
 
 import com.simibubi.create.content.processing.sequenced.SequencedAssemblyItem;
 import dev.createironsuit.CreateIronSuit;
+import dev.createironsuit.SuitVariant;
 import dev.createironsuit.item.IronSuitArmorItem;
 import dev.createironsuit.item.RepulsorGloveItem;
+import java.util.ArrayList;
+import java.util.EnumMap;
+import java.util.List;
+import java.util.Map;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -16,18 +21,46 @@ public final class ModItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(CreateIronSuit.MODID);
 
-    private static Item.Properties armorProps(ArmorItem.Type type, int factor) {
-        return new Item.Properties().durability(type.getDurability(factor)).rarity(Rarity.EPIC).fireResistant();
+    private static final ArmorItem.Type[] PIECES = {
+            ArmorItem.Type.HELMET, ArmorItem.Type.CHESTPLATE, ArmorItem.Type.LEGGINGS, ArmorItem.Type.BOOTS};
+
+    /** Todas as pecas de armadura, por variante e por tipo. */
+    public static final Map<SuitVariant, Map<ArmorItem.Type, DeferredItem<IronSuitArmorItem>>> ARMOR =
+            new EnumMap<>(SuitVariant.class);
+
+    static {
+        for (SuitVariant variant : SuitVariant.values()) {
+            Map<ArmorItem.Type, DeferredItem<IronSuitArmorItem>> pieces = new EnumMap<>(ArmorItem.Type.class);
+            for (ArmorItem.Type type : PIECES) {
+                pieces.put(type, ITEMS.register(variant.id + "_" + suffix(type),
+                        () -> new IronSuitArmorItem(ModArmorMaterials.BY_VARIANT.get(variant), type, variant,
+                                new Item.Properties()
+                                        .durability(type.getDurability(variant.durabilityFactor))
+                                        .rarity(variant.heavy ? Rarity.EPIC : Rarity.RARE)
+                                        .fireResistant())));
+            }
+            ARMOR.put(variant, pieces);
+        }
     }
 
-    public static final DeferredItem<IronSuitArmorItem> HELMET = ITEMS.register("iron_suit_helmet",
-            () -> new IronSuitArmorItem(ModArmorMaterials.IRON_SUIT, ArmorItem.Type.HELMET, armorProps(ArmorItem.Type.HELMET, 37)));
-    public static final DeferredItem<IronSuitArmorItem> CHESTPLATE = ITEMS.register("iron_suit_chestplate",
-            () -> new IronSuitArmorItem(ModArmorMaterials.IRON_SUIT, ArmorItem.Type.CHESTPLATE, armorProps(ArmorItem.Type.CHESTPLATE, 37)));
-    public static final DeferredItem<IronSuitArmorItem> LEGGINGS = ITEMS.register("iron_suit_leggings",
-            () -> new IronSuitArmorItem(ModArmorMaterials.IRON_SUIT, ArmorItem.Type.LEGGINGS, armorProps(ArmorItem.Type.LEGGINGS, 37)));
-    public static final DeferredItem<IronSuitArmorItem> BOOTS = ITEMS.register("iron_suit_boots",
-            () -> new IronSuitArmorItem(ModArmorMaterials.IRON_SUIT, ArmorItem.Type.BOOTS, armorProps(ArmorItem.Type.BOOTS, 37)));
+    private static String suffix(ArmorItem.Type type) {
+        return switch (type) {
+            case HELMET -> "helmet";
+            case CHESTPLATE -> "chestplate";
+            case LEGGINGS -> "leggings";
+            default -> "boots";
+        };
+    }
+
+    public static DeferredItem<IronSuitArmorItem> piece(SuitVariant variant, ArmorItem.Type type) {
+        return ARMOR.get(variant).get(type);
+    }
+
+    public static List<Item> allChestplates() {
+        List<Item> list = new ArrayList<>();
+        for (SuitVariant v : SuitVariant.values()) list.add(piece(v, ArmorItem.Type.CHESTPLATE).get());
+        return list;
+    }
 
     public static final DeferredItem<RepulsorGloveItem> REPULSOR_GLOVE = ITEMS.register("repulsor_glove",
             () -> new RepulsorGloveItem(new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));

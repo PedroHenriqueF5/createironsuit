@@ -19,6 +19,22 @@ public final class SuitConstants {
     public static final float CHARGE_FE_PER_RPM_PER_TICK = 2.0F;
     /** Impacto de stress do carregador (por RPM). */
     public static final float CHARGER_STRESS_IMPACT = 8.0F;
-    public static final float FLY_SPEED = 0.10F;
     public static final float DEFAULT_FLY_SPEED = 0.05F;
+
+    // --- poderes por tecla ---
+    public static final int UNIBEAM_COST = 40_000;
+    public static final float UNIBEAM_DAMAGE = 40.0F;
+    public static final double UNIBEAM_RANGE = 64.0D;
+    public static final int UNIBEAM_COOLDOWN_TICKS = 80;
+
+    public static final int PULSE_COST = 15_000;
+    public static final float PULSE_DAMAGE = 6.0F;
+    public static final double PULSE_RADIUS = 8.0D;
+    public static final int PULSE_COOLDOWN_TICKS = 60;
+
+    public static final int DASH_COST = 8_000;
+    public static final double DASH_SPEED = 2.2D;
+    public static final int DASH_COOLDOWN_TICKS = 25;
+
+    public static final int REPULSOR_KEY_COOLDOWN_TICKS = 10;
 }

@@ -1,6 +1,7 @@
 package dev.createironsuit.energy;
 
 import dev.createironsuit.SuitConstants;
+import dev.createironsuit.SuitVariant;
 import dev.createironsuit.item.IronSuitArmorItem;
 import dev.createironsuit.registry.ModComponents;
 import net.minecraft.util.Mth;
@@ -19,6 +20,12 @@ public final class SuitHelper {
             if (!(entity.getItemBySlot(slot).getItem() instanceof IronSuitArmorItem)) return false;
         }
         return true;
+    }
+
+    /** Variante da armadura que o jogador veste no peito (CLASSIC se nao houver). */
+    public static SuitVariant chestVariant(LivingEntity entity) {
+        ItemStack chest = entity.getItemBySlot(EquipmentSlot.CHEST);
+        return chest.getItem() instanceof IronSuitArmorItem item ? item.getVariant() : SuitVariant.CLASSIC;
     }
 
     public static int getEnergy(ItemStack stack) {
